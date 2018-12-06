@@ -104,6 +104,33 @@ footer {
     opacity: 0.9;
 }
 
+#results li {
+    padding: 10px 0;
+    border-bottom: 1px dotted #ccc;
+    list-style: none;
+    overflow: auto;
+}
+
+.list-left {
+    float: left;
+    width: 20%;
+}
+
+.list-left img {
+    width: 100%;
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+
+.list-right {
+    float: right;
+    width: 78%;
+}
+
+.cTitle {
+    color: #dd2826;
+}
+
 #footer-link {
     color: dodgerblue;
 }
