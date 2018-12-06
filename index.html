@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <title>jQuery Search Engine for YouTube</title>
+        
+        <link rel='stylesheet' href='css/style.css'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src='js/index.js'></script>
-        <link rel='stylesheet' href='css/style.css'>
     </head>
     <body>
-        <h1>test</h1>
+        <div class="container">
+            <header>
+                <h1>jQuery <span>Search</span></h1>
+                <p>Search all YouTube videos via the YouTube API!</p>
+            </header>
+
+            <section>
+                <form onsubmit="return search()" id="search-form" name="search-form">
+                    <div class="fieldcontainer">
+                        <input type="search" name="search-field" id="query" class="search-field" placholder="Search YouTube...">
+                        <input type="submit" name="search-btn" id="search-btn" value="">
+                    </div>
+                </form>
+
+                <ul id="results">
+                    <div class="buttons">
+
+                    </div>
+                </ul>
+            </section>
+
+            <footer>
+                <p>Copyright &copy; 2018 <a id="footer-link" href="https://charlie-sparks-portfolio.herokuapp.com/index.html">Sparks Full-Stack</a>; based on a design by </p>
+            </footer>
+        </div>
     </body>
 </html>
