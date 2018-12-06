@@ -19,6 +19,36 @@ a {
 
 .container {
     width: 740px;
+    background-color: #fff;
+    margin: auto;
+}
+
+.clearfix {
+    clear: both;
+}
+
+header {
+    padding: 20px 20px;
+    background: #f4f4f4;
+}
+
+header h1 {
+    color: #000;
+    margin-bottom: 5px;
+}
+
+header span {
+    color: #dd2826;
+}
+
+section {
+    padding: 30px 20px 20px 20px;
+}
+
+footer {
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
 }
 
 #footer-link {
