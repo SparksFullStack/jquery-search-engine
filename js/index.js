@@ -70,6 +70,47 @@ function search(){
     })
 }
 
+// Next Page Function
+function nextPage(){
+    var token = $('#next-button').data('token');
+    var q = $('#next-button').data('q');
+
+    // zeroing out the results and their buttons
+    $('#results').html("");
+    $('#buttons').html("");
+
+    // getting the value from the query element
+    var q = $(`#query`).val();
+
+
+    // making the GET request
+    $.get("https://www.googleapis.com/youtube/v3/search", {
+        part: 'snippet, id',
+        q: q,
+        pageToken: token,
+        type: 'video',
+        key: 'AIzaSyDVsESHdelHRLqPZcaR5kcyQqVlMTxlW_Y',
+    }, (data) => {
+        const { nextPageToken, prevPageToken } = data;
+
+        // works just like forEach in vanilla JS
+            // first param: array, second: callback
+        $.each(data.items, (index, item) => {
+            const output = getOutput(item); // custom function to handle the data returned from the request
+
+            // displaying the results by appending them to the #results
+            $('#results').append(output);
+        });
+
+        var buttons = getButtons(prevPageToken, nextPageToken, q); // custom function to build buttons based on the results
+
+
+        console.log(buttons)
+        // displaying the buttons in the HTML
+        $('#buttons').append(buttons);
+    })
+}
+
 
 // Request Output Handler
 function getOutput(item){
